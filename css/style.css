@@ -1,0 +1,280 @@
+/*
+   Світ природи — спільні (базові) стилі для всіх сторінок.
+   Включає: скидання, типографіку, розкладку, властивості display (block / inline / inline-block).
+   Документація: https://developer.mozilla.org/en-US/docs/Web/CSS/display
+
+   ОСОБЛИВОСТІ DISPLAY В РОЗКЛАДЦІ:
+   • display: block — елемент займає всю доступну ширину, починається з нового рядка.
+     Margin/padding впливають з усіх сторін. Приклад: p, h1, div, section, main, header, footer.
+   • display: inline — елемент у потокі тексту, не починає новий рядок; width/height не застосовуються.
+     Приклад: a, span, img (за замовчуванням). Тут для img задано block, щоб прибрати проміжок під зображенням.
+   • display: inline-block — як inline (стоїть у рядку), але всередині поводиться як блок:
+     можна задати width, height, padding, margin по вертикалі. Використано для nav li та nav a (горизонтальне меню).
+*/
+
+/* ========== Скидання та бокс-модель ========== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+    max-width: 900px;
+    font-size: 1rem;
+    color: #2c3e2c;
+    background: linear-gradient(180deg, #f0f7f0 0%, #e8f0e8 50%, #dce8dc 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ========== Display: block (блокові елементи) ========== */
+/* p, h1, h2, h3, div, section, article, main, header, footer за замовчуванням мають display: block.
+   Блок займає всю доступну ширину, починається з нового рядка, margin/padding впливають на усі сторони.
+   Явно задаємо block для ясності та перевизначення. */
+body,
+main,
+article,
+header,
+footer,
+section,
+nav,
+h1, h2, h3,
+p,
+blockquote,
+figure,
+ul, ol {
+    display: block;
+}
+
+/* ========== Display: block для внутрішньо-рядкових елементів (a, img) ========== */
+/* Посилання (a) та зображення (img) за замовчуванням — inline. Якщо задати display: block,
+   вони ведуть себе як блоки: займають ширину контейнера (або задану), можна задати margin/padding зверху-знизу.
+   Тут: посилання в навігації робимо block всередині inline-block контейнера для клікабельної області. */
+nav a {
+    display: inline-block; /* див. нижче */
+}
+
+/* Посилання «На головну» / «Наверх» в контенті — блок для акценту */
+main article a[href="index.html"],
+main article a[href="#top"] {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: #2d5a3d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+main article a[href="index.html"]:hover,
+main article a[href="#top"]:hover {
+    background: #1e4d2e;
+}
+
+/* img за замовчуванням inline (залишає проміжок під базовою лінією). display: block прибирає це. */
+figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ========== Display: inline-block ========== */
+/* inline-block: елемент у потокі як inline (не переносить на новий рядок сам по собі),
+   але всередині поводиться як block — можна задати width, height, padding, margin по вертикалі.
+   Ідеально для кнопок-посилань у ряд (навігація), тегів, піктограм. */
+nav ul li {
+    display: inline-block;
+    margin: 0 0.25rem;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    color: #1a4d2e;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background: #2d5a3d;
+    color: #fff;
+}
+
+/* Заголовки — блокові */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a4d2e;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d5a3d;
+    margin: 1.5rem 0 0.5rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #7cb083;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3d6b4a;
+    margin: 1rem 0 0.4rem 0;
+}
+
+p {
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+blockquote {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #2d5a3d;
+    background: rgba(45, 90, 61, 0.08);
+    border-radius: 0 8px 8px 0;
+}
+
+blockquote p {
+    text-indent: 0;
+    text-align: center;
+    font-style: italic;
+    color: #1e4d2e;
+    margin: 0;
+}
+
+figure {
+    margin: 1.25rem 0;
+    padding: 0;
+}
+
+figcaption {
+    margin: 0.35rem 0 0 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+}
+
+ul, ol {
+    margin: 0.5rem 0 1rem 1.5rem;
+    padding: 0 0 0 1.25rem;
+}
+
+li {
+    margin: 0.25rem 0;
+}
+
+a {
+    color: #25632d;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #1a7c2e;
+}
+
+small {
+    font-size: 0.875rem;
+}
+
+/* ========== Шапка та підвал (спільні) ========== */
+header {
+    background: linear-gradient(135deg, #1a4d2e 0%, #2d5a3d 100%);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 1.5rem 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(26, 77, 46, 0.25);
+}
+
+header h1 {
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+header .subtitle,
+header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    text-align: center;
+    text-indent: 0;
+    margin: 0 0 1rem 0;
+}
+
+header nav {
+    margin-top: 1rem;
+}
+
+header nav h2 {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    border: none;
+    margin: 0.5rem 0 0.35rem 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+header nav a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background: #2d5a3d;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+}
+
+footer p {
+    margin: 0;
+    text-indent: 0;
+}
+
+footer a {
+    color: #b8e0c0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    font-weight: 700;
+    color: #1a4d2e;
+}
+
+.note {
+    font-style: italic;
+    color: #3d6b4a;
+}

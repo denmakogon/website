@@ -1,0 +1,28 @@
+/*
+   Стилі сторінки «Про сайт» (about.html).
+   Мінімалістична сторінка: заголовок, текст, автор, рік.
+*/
+
+main {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(26, 77, 46, 0.1);
+}
+
+article h2 {
+    color: #1a4d2e;
+    margin-top: 0;
+}
+
+article p {
+    max-width: 42em;
+}
+
+article p b {
+    color: #2d5a3d;
+}
+
+article > p:last-of-type {
+    margin-top: 1.5rem;
+}

@@ -1,0 +1,118 @@
+/*
+   Стилі сторінки «Галерея» (gallery.html).
+   Сітка зображень: display + ширина для карток.
+*/
+
+main {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(26, 77, 46, 0.1);
+}
+
+article > p {
+    text-indent: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Фігури галереї: inline-block для сітки в 2 колонки */
+article figure {
+    display: inline-block;
+    width: calc(50% - 0.5rem);
+    margin: 0 0.25rem 1rem 0.25rem;
+    vertical-align: top;
+    padding: 0.5rem;
+    background: #f8faf8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+article figure img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+article figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    article figure {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+article > p:last-of-type {
+    margin-top: 1.5rem;
+}
+
+/* ЛР4: мультимедіа */
+.media-lab {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid #c9ddcc;
+    border-radius: 10px;
+    background: #f7fbf7;
+}
+
+.media-lab h2,
+.media-lab h3 {
+    margin-top: 0.8rem;
+}
+
+.media-lab p {
+    text-indent: 0;
+}
+
+.media-image,
+.media-video,
+.media-embed,
+.media-object {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #b9d4bd;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #ffffff 0%, #f4faf4 100%);
+    box-shadow: 0 2px 10px rgba(26, 77, 46, 0.08);
+}
+
+.media-audio {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.media-object a {
+    display: inline-block;
+    margin: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid #9ac9a2;
+    border-radius: 6px;
+    text-decoration: none;
+    background: #eef7ee;
+    color: #1e4d2e;
+}
+
+/* ЛР4: блок карти посилань */
+.map-lab {
+    margin-top: 1.2rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid #c9ddcc;
+    border-radius: 10px;
+    background: #f7fbf7;
+}
+
+.map-image {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    border: 1px solid #b9d4bd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(26, 77, 46, 0.08);
+}

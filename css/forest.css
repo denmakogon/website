@@ -1,0 +1,41 @@
+/*
+   Стилі сторінки «Ліси та рослинність» (forest.html).
+   Акцент на зеленій палітрі, блоки текст + зображення.
+*/
+
+main {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(26, 77, 46, 0.12);
+}
+
+article h2 {
+    color: #1a4d2e;
+    border-bottom-color: #5a9a6a;
+}
+
+article h3 {
+    color: #2d5a3d;
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(26, 77, 46, 0.15);
+}
+
+figcaption {
+    color: #3d6b4a;
+}
+
+/* Посилання «Повернутися на головну» */
+article > p:last-of-type {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0ebe0;
+}

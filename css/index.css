@@ -1,0 +1,448 @@
+/*
+   Стилі головної сторінки (index.html).
+   Два блоки навігації, секції з якорями, цитата, зображення.
+*/
+
+main {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(26, 77, 46, 0.1);
+}
+
+/* Два nav на головній: «Сторінки сайту» та «Зміст сторінки» */
+header nav:first-of-type {
+    margin-bottom: 0.5rem;
+}
+
+header nav h2 {
+    font-size: 0.95rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e8efe8;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e4d2e;
+}
+
+.subtitle {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Картинки на головній — блок, заокруглення */
+#vstup figure img,
+#chomu-vazhlyva figure img,
+#zobrazhennia figure img {
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#zobrazhennia p {
+    text-indent: 0;
+    text-align: center;
+}
+
+footer {
+    margin-top: 1.5rem;
+}
+
+/* =========================================================
+   ЛР3: Списки та display: list-item
+   ========================================================= */
+
+/* Загальний контейнер секції зі списками */
+#lists-demo {
+    background: #f5faf5;
+    border: 1px solid #c8decb;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    overflow: hidden;
+}
+
+/* Єдиний стиль картки для кожного прикладу списку */
+#lists-demo > dl,
+#lists-demo > .list-item-demo {
+    margin: 0 0 0.9rem 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid #d4e6d8;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 5px rgba(26, 77, 46, 0.06);
+}
+
+/* Окремо для ul/ol: контролюємо внутрішні відступи, щоб маркери не виходили за межі */
+#lists-demo > ul,
+#lists-demo > ol {
+    margin: 0 0 0.9rem 0;
+    padding: 0.85rem 1rem 0.85rem 2.1rem;
+    border: 1px solid #d4e6d8;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 5px rgba(26, 77, 46, 0.06);
+    max-width: 100%;
+}
+
+#lists-demo > :last-child {
+    margin-bottom: 0;
+}
+
+#lists-demo li {
+    margin: 0.35rem 0;
+}
+
+/* UL + type + list-style-type */
+.ul-basic {
+    list-style-type: circle;
+    list-style-position: outside;
+    padding-left: 2.2rem;
+}
+
+/* OL з type/start/value + list-style-type */
+.ol-roman {
+    list-style-type: upper-roman;
+    list-style-position: outside;
+    padding-left: 2.4rem;
+}
+
+.ol-alpha {
+    list-style-type: lower-alpha;
+    list-style-position: outside;
+    padding-left: 2.2rem;
+}
+
+#lists-demo .ol-alpha {
+    border-style: dashed;
+}
+
+/* list-style-position: outside */
+.list-outside {
+    list-style-type: square;
+    list-style-position: outside;
+    padding-left: 2.2rem;
+}
+
+/* list-style-position: inside */
+.list-inside {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.list-inside li {
+ border: 1px solid red;   
+}
+.list-outside li {
+ border: 1px solid red;   
+}
+
+/* list-style-image */
+.list-image {
+    list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%232d5a3d'/%3E%3C/svg%3E");
+    list-style-position: outside;
+    padding-left: 2.3rem;
+}
+
+/* Скорочена властивість list-style */
+.list-shorthand {
+    list-style: lower-alpha inside;
+}
+
+/* Список визначень */
+.defs-list dt {
+    font-weight: 700;
+    color: #1e4d2e;
+    margin-top: 0.45rem;
+}
+
+.defs-list dd {
+    margin: 0.2rem 0 0.55rem 1rem;
+}
+
+/* display: list-item для довільного елемента h1 */
+.as-list-item {
+    display: list-item;
+    list-style-type: square;
+    list-style-position: inside;
+    font-size: 1.05rem;
+    text-transform: none;
+    text-align: left;
+    letter-spacing: normal;
+    color: #2d5a3d;
+    margin: 0.45rem 0 0.15rem 0;
+    padding: 0;
+}
+
+.as-list-item::marker {
+    color: #2d5a3d;
+}
+
+.list-item-demo p {
+    text-indent: 0;
+    margin: 0 0 0.55rem 0.4rem;
+}
+
+.list-item-demo p:last-child {
+    margin-bottom: 0;
+}
+
+/* Висновки */
+.list-conclusions {
+    list-style: disc outside;
+}
+
+#lists-demo .list-conclusions {
+    background: #eef7ee;
+    border-color: #c3ddc8;
+}
+
+/* =========================================================
+   ЛР3(4): Горизонтальне меню ul > li > a
+   Властивості: display, float, clear, border, background-color,
+   text-decoration, text-align.
+   ========================================================= */
+.menu-demo-wrap {
+    margin-top: 0.9rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid #d4e6d8;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 5px rgba(26, 77, 46, 0.06);
+}
+
+.menu-demo-title {
+    margin: 0 0 0.6rem 0;
+    text-indent: 0;
+    font-weight: 600;
+    color: #2d5a3d;
+}
+
+.menu-demo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #9ac9a2;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #eef7ee;
+}
+
+/* float: елементи li стають в ряд */
+.menu-demo li {
+    float: left;
+    margin: 0;
+}
+
+/* display:block + text-align + text-decoration */
+.menu-demo li a {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    border-right: 1px solid #9ac9a2;
+    background-color: #f5fbf5;
+    color: #1e4d2e;
+    text-decoration: none;
+    text-align: center;
+    min-width: 110px;
+}
+
+.menu-demo li:last-child a {
+    border-right: none;
+}
+
+.menu-demo li a:hover {
+    background-color: #2d5a3d;
+    color: #ffffff;
+}
+
+/* clear: очищаємо float, щоб контейнер не "схлопувався" */
+.menu-demo::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* =========================================================
+   ЛР3(7,8): Таблиці
+   ========================================================= */
+.tables-demo-wrap {
+    margin-top: 0.9rem;
+}
+
+.eco-table-attrs,
+.eco-table-css {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    color: #234126;
+    background: #ffffff;
+    border: 1px solid #b9d5be;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Таблиця 1: щільна модель меж */
+.eco-table-attrs {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.eco-table-attrs caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0.55rem 0.75rem;
+    font-weight: 700;
+    color: #1e4d2e;
+    background: #eef7ee;
+    border-bottom: 1px solid #cfe2d2;
+}
+
+.eco-table-attrs th,
+.eco-table-attrs td {
+    border: 1px solid #cfe2d2;
+    padding: 0.55rem 0.6rem;
+    vertical-align: middle;
+}
+
+.eco-table-attrs thead th {
+    background: #f3faf3;
+    color: #1e4d2e;
+}
+
+.eco-table-attrs tbody tr:nth-child(even) {
+    background: #fbfefb;
+}
+
+.eco-table-attrs tfoot td {
+    background: #eef7ee;
+    font-style: italic;
+}
+
+.eco-table-attrs .col-zone {
+    background: #f8fcf8;
+}
+
+/* Таблиця 2: розділена модель меж */
+.eco-table-css {
+    border-collapse: separate;
+    border-spacing: 6px;
+    background: #edf6ed;
+}
+
+.eco-table-css caption {
+    caption-side: bottom;
+    text-align: left;
+    padding: 0.45rem 0.2rem 0.1rem 0.2rem;
+    font-weight: 600;
+    color: #2b5a35;
+}
+
+.eco-table-css th,
+.eco-table-css td {
+    border: 1px solid #bcd8c1;
+    background: #ffffff;
+    padding: 0.55rem 0.6rem;
+    vertical-align: top;
+}
+
+.eco-table-css thead th {
+    background: #f6fbf6;
+}
+
+/* =========================================================
+   ЛР2.1: Форма
+   ========================================================= */
+#form-demo {
+    background: #f5faf5;
+    border: 1px solid #c8decb;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    overflow: hidden;
+}
+
+#form-demo form {
+    margin: 0;
+}
+
+#form-demo fieldset {
+    border: 1px solid #d4e6d8;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #ffffff;
+}
+
+#form-demo legend {
+    font-weight: 600;
+    color: #2d5a3d;
+    padding: 0 0.5rem;
+}
+
+#form-demo p {
+    margin: 0.5rem 0;
+}
+
+#form-demo label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 0.5rem;
+    color: #2c3e2c;
+}
+
+#form-demo fieldset p label {
+    width: auto;
+    margin-left: 0.5rem;
+}
+
+#form-demo input[type="text"],
+#form-demo input[type="password"],
+#form-demo input[type="email"],
+#form-demo select {
+    padding: 0.4rem;
+    border: 1px solid #9ac9a2;
+    border-radius: 4px;
+    background: #f9fdf9;
+    color: #2c3e2c;
+}
+
+#form-demo input[type="text"]:focus,
+#form-demo input[type="password"]:focus,
+#form-demo input[type="email"]:focus,
+#form-demo select:focus {
+    border-color: #2d5a3d;
+    outline: none;
+}
+
+#form-demo input[type="checkbox"],
+#form-demo input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+#form-demo input[type="submit"],
+#form-demo input[type="reset"],
+#form-demo button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #2d5a3d;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+#form-demo input[type="submit"]:hover,
+#form-demo input[type="reset"]:hover,
+#form-demo button:hover {
+    background: #1e4d2e;
+}
+
+#form-demo button img {
+    margin-right: 0.5rem;
+}

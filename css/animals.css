@@ -1,0 +1,40 @@
+/*
+   Стилі сторінки «Тварини та птахи» (animals.html).
+   Тепліші відтінки, акцент на контент і зображеннях.
+*/
+
+main {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(26, 77, 46, 0.12);
+}
+
+article h2 {
+    color: #1a4d2e;
+    border-bottom-color: #6b9a7a;
+}
+
+article h3 {
+    color: #2d5a3d;
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(40, 70, 50, 0.12);
+}
+
+figcaption {
+    color: #4a6b52;
+}
+
+article > p:last-of-type {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e8efe8;
+}

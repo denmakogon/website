@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Денис">
+    <meta name="description" content="Галерея зображень природи — ліси, гори, водойми, пейзажі.">
+    <meta http-equiv="Content-Language" content="uk">
+    <title>Галерея — Світ природи</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+</head>
+<body>
+    <header>
+        <h1>Світ природи</h1>
+        <nav aria-label="Головне меню сайту">
+            <h2>Сторінки сайту</h2>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="forest.html">Ліси та рослинність</a></li>
+                <li><a href="animals.html">Тварини та птахи</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="about.html">Про сайт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Галерея</h2>
+            <p>Тут зібрані зображення природи: ліси, гори, водойми та пейзажі. Кожне фото показує красу та різноманітність навколишнього світу.</p>
+
+            <figure>
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Ліс" width="600">
+                <figcaption>Ліс — зелені легені планети.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600" alt="Туман у лісі" width="600">
+                <figcaption>Туман у лісі.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600" alt="Схід сонця" width="600">
+                <figcaption>Схід сонця в природі.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=600" alt="Озеро" width="600">
+                <figcaption>Озеро серед гір.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600" alt="Гірський пейзаж" width="600">
+                <figcaption>Гірський пейзаж.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600" alt="Водоспад" width="600">
+                <figcaption>Водоспад — сила води.</figcaption>
+            </figure>
+
+            <!-- ЛР4: Вбудовування мультимедіа -->
+            <section class="media-lab">
+                <!-- IMG: src, alt, title, width, height, align -->
+                <img
+                    class="media-image"
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=640"
+                    alt="Панорама лісу"
+                    title="Лісовий пейзаж"
+                    width="640"
+                    height="360"
+                    align="middle"
+                >
+
+                <!-- AUDIO: src/preload/autoplay/controls/muted/loop/mediagroup + source -->
+                <audio
+                    class="media-audio"
+                    src="https://www.w3schools.com/html/horse.mp3"
+                    preload="metadata"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    mediagroup="nature-group"
+                >
+                    <!-- SOURCE: альтернативне джерело аудіо -->
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                </audio>
+
+                <!-- VIDEO: preload/autoplay/controls/muted/loop/mediagroup/poster + source -->
+                <video
+                    class="media-video"
+                    width="640"
+                    height="360"
+                    preload="metadata"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    mediagroup="nature-group"
+                    poster="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=640"
+                >
+                </video>
+
+                <!-- EMBED: вбудований ресурс (PDF) -->
+                <embed
+                    class="media-embed"
+                    src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=640"
+                    type="image/jpeg"
+                    width="640"
+                    height="360"
+                >
+
+                <!-- PARAM: параметри для об'єкта (object) -->
+                <object
+                    class="media-object"
+                    data="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=640"
+                    type="image/jpeg"
+                    width="640"
+                    height="360"
+                >
+                    <param name="quality" value="high">
+                    <param name="loading" value="lazy">
+                    <a href="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200" >Відкрити зображення</a>
+                </object>
+            </section>
+
+            <!-- ЛР4: Клієнтська навігаційна карта посилань (rect, circle, poly) -->
+            <section class="map-lab">
+                <img
+                    class="map-image"
+                    src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=640"
+                    alt="Карта навігації по розділах сайту"
+                    title="Клікніть по різних зонах зображення"
+                    width="640"
+                    height="360"
+                    usemap="#naturemap"
+                >
+
+                <map name="naturemap">
+                    <!-- rect: прямокутна зона -->
+                    <area
+                        shape="rect"
+                        coords="20,20,220,130"
+                        href="forest.html"
+                        alt="Перейти до розділу Ліси"
+                        title="Ліси"
+                    >
+                    <!-- circle: кругова зона -->
+                    <area
+                        shape="circle"
+                        coords="320,170,70"
+                        href="animals.html"
+                        alt="Перейти до розділу Тварини"
+                        title="Тварини"
+                    >
+                    <!-- poly: багатокутна зона -->
+                    <area
+                        shape="poly"
+                        coords="440,40,620,80,590,220,420,190"
+                        href="about.html"
+                        alt="Перейти до розділу Про сайт"
+                        title="Про сайт"
+                    >
+                </map>
+            </section>
+
+            <p><a href="index.html">На головну</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <hr>
+        <p><small>&copy; 2026 Світ природи.</small> <a href="index.html">На головну</a></p>
+    </footer>
+</body>
+</html>
